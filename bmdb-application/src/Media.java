@@ -5,4 +5,12 @@ public class Media {
 	public String title;
 	public String description;
 	public LocalDate premier;
+	
+	public Media(BigDecimal ID, String Title, String Description, LocalDate Premier) {
+		this.id = ID;
+		this.title = Title;
+		this.description = Description;
+		this.premier = Premier;
+	}
+
 }
