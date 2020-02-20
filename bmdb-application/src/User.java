@@ -13,8 +13,8 @@ public class User {
 		this.passWord = PassWord;
 	}
 	
-	public void addReview(Review review) {
-		this.userReviews.add(review);
+	public void addReview(String text) {
+		this.userReviews.add(new Review(text, this));
 	}
 	
 	public List<Review> getReview(){
