@@ -1,23 +1,36 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-	public String name;
-	public String email;
-	public String passWord;
-	
-	public List<Review> userReviews;
+	public final String name;
+	public final String email;
+	private String passWord;
+	private List<Review> userReviews;
 	
 	public User(String Name, String Email, String PassWord) {
 		this.name = Name;
 		this.email = Email;
-		this.passWord = PassWord;
+		this.setPassword(PassWord);
+		setUserReviews(new ArrayList<Review>());
 	}
 	
-	public void addReview(String text) {
-		this.userReviews.add(new Review(text, this));
+	public String getPassword() {
+		return passWord;
+	}
+	
+	public void setPassword(String passWord) {
+		this.passWord=passWord;
+	}
+	
+	public void addReview(Review rev) {
+		this.userReviews.add(rev);
 	}
 	
 	public List<Review> getReview(){
 		return this.userReviews;
+	}
+	
+	public void setUserReviews(List<Review> list) {
+		this.userReviews=list;
 	}
 }

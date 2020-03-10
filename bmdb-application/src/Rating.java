@@ -19,4 +19,18 @@ public enum Rating {
 	public static int valueOfRating(Rating rating) {
 		return BY_RATE.get(rating);
 	}
+	
+	public static Rating intToRating(int intToConvert) {
+		Rating ratingToReturn;
+		if(intToConvert==1) {
+			ratingToReturn=Rating.BAD;
+		}
+		else if(intToConvert==3) {
+			ratingToReturn=Rating.AVERAGE;
+		}
+		else {
+			ratingToReturn=Rating.GOOD;
+		}
+		return ratingToReturn;
+	}
 }
