@@ -1,3 +1,4 @@
+package com.example.bmdb.domain;
 
 public class ReviewBuilder {
 	private String text;
@@ -5,7 +6,7 @@ public class ReviewBuilder {
 	private Media media;
 	private Rating rating;
 	
-	ReviewBuilder(){
+	public ReviewBuilder(){
 		Initialise();
 	}
 	

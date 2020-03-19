@@ -1,3 +1,4 @@
+package com.example.bmdb.domain;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class MediaBuilder {
 	private List<Actor> cast;
 	private Boolean IsMovie;
 	
-	MediaBuilder(){
+	public MediaBuilder(){
 		Initialise();
 	}
 	

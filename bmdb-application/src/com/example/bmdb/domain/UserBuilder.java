@@ -1,3 +1,4 @@
+package com.example.bmdb.domain;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ public class UserBuilder {
 	private String passWord;
 	private List<Review> userReviews;
 	
-	UserBuilder(){
+	public UserBuilder(){
 		Initialise();
 	}
 	

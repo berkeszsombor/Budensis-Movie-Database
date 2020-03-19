@@ -1,7 +1,10 @@
+package com.example.bmdb.app;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
+
+import com.example.bmdb.domain.*;
 
 public class View {
 	UserBuilder currentUserBuilder;

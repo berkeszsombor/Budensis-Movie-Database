@@ -1,3 +1,4 @@
+package com.example.bmdb.domain;
 import java.util.HashMap;
 import java.util.Map;
 
