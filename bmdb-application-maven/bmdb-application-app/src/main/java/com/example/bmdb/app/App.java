@@ -1,20 +1,22 @@
 package com.example.bmdb.app;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.bmdb.Internationalizer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.example.bmdb.domain.*;
 import com.example.bmdb.service.*;
 import com.example.bmdb.view.*;
 
-
-
 public class App {
+
+    private static Logger logger = LoggerFactory.getLogger(App.class);
+
     Review review;
     List<Media> medias;
     Media selectedMedia;
@@ -22,12 +24,15 @@ public class App {
     Service service;
     Boolean stillPlaying = true;
 
-    public App() {
-        this.view=new View();
-        this.service=new Service();
+    public App(Service service, View view) {
+        logger.info("Constructor");
+        this.view=view;
+        this.service=service;
+        this.medias = new ArrayList<>();
     }
 
     public void CreateTestData() {
+        logger.info("Creating test data");
         //10db Actor
         this.service.AddActor("Scarlett Johansson", LocalDate.parse("1980-01-01"), Sex.FEMALE, "Best actress");
         this.service.AddActor("Robert Downey Jr.", LocalDate.parse("1965-02-01"), Sex.MALE, "Best actor");
@@ -70,17 +75,18 @@ public class App {
         this.service.AddReview("Good film", this.service.FindUser("BenUser"), this.service.FindMedia(new BigDecimal("4")), Rating.GOOD);
     }
 
-    public void DoReview(User currentUser) throws IOException {
-        String choosenId = this.view.PrintGetIdToReview(new BufferedReader(new InputStreamReader(System.in)));
+    public void DoReview(User currentUser) {
+        logger.info("DoReview");
+        String choosenId = this.view.PrintGetIdToReview();
         this.selectedMedia = this.service.FindMedia(new BigDecimal(choosenId));
-        String userReview = this.view.PrintDoReview(new BufferedReader(new InputStreamReader(System.in)));
-        int choosenRating = Integer.parseInt(this.view.PrintDoRating(new BufferedReader(new InputStreamReader(System.in))));
+        String userReview = this.view.PrintDoReview();
+        int choosenRating = Integer.parseInt(this.view.PrintDoRating());
         this.service.AddReview(userReview, currentUser, selectedMedia, Rating.intToRating(choosenRating));
         this.view.PrintReviews(this.service.FindAllReviews(this.selectedMedia));
     }
 
-    public void ExitOrContinue() throws IOException {
-        String option = this.view.PrintExitOrContinue(new BufferedReader(new InputStreamReader(System.in)));
+    public void ExitOrContinue() {
+        String option = this.view.PrintExitOrContinue();
         String yesOption = "1";
         if (option.equals(yesOption)) {
             this.stillPlaying=true;
@@ -102,23 +108,20 @@ public class App {
         media.averageRating = val;
     }
 
-    public void Play(App app) throws IOException{
-        app.CreateTestData();
+    public void launch() {
+        logger.info("Launch");
+        this.CreateTestData();
         for (Media media : this.service.FindAllMedia()) {
             GetReviewAverage(media);
         }
-        User currentUser = this.view.ReadUserData(new BufferedReader(new InputStreamReader(System.in)));
+        User currentUser = this.view.ReadUserData();
         this.view.PrintWelcomeMessage();
         this.view.PrintMedias(this.service.FindAllMedia());
         while(this.stillPlaying==true) {
-            app.DoReview(currentUser);
-            app.ExitOrContinue();
+            this.DoReview(currentUser);
+            this.ExitOrContinue();
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        App app = new App();
-        app.Play(app);
-    }
 
 }

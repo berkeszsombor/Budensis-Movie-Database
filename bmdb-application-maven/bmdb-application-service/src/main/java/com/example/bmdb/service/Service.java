@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.bmdb.domain.*;;
+import com.example.bmdb.domain.*;
 
 public class Service {
     private List<User> users;
