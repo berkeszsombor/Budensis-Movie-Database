@@ -15,25 +15,23 @@ public class View {
     private Internationalizer internationalizer;
     private static Logger logger = LoggerFactory.getLogger(View.class);
 
-    public View(/*Internationalizer internationalizer*/) {
+    public View(Internationalizer internationalizer) {
         currentUserBuilder=new UserBuilder();
-        //this.internationalizer = internationalizer;
+        this.internationalizer = internationalizer;
         logger.info("Constructor");
         userInput=new Scanner(System.in);
     }
 
     public User ReadUserData() {
         logger.info("ReadUserData");
-        //System.out.println(this.internationalizer.getMessage("view.readUserData.WelcomeMessage"));
-        System.out.println("What is your name?");
+        System.out.println(this.internationalizer.getMessage("view.readUserData.WelcomeMessage"));
         String name = userInput.nextLine();
         return (User)currentUserBuilder.buildName(name).getObject();
     }
 
     public void PrintWelcomeMessage() {
         logger.info("PrintWelcomeMessage");
-        //System.out.println(this.internationalizer.getMessage("view.printWelcomeMessage.SecondWelcomeMessage"));
-        System.out.println("Welcome to the movie rating database");
+        System.out.println(this.internationalizer.getMessage("view.printWelcomeMessage.SecondWelcomeMessage"));
     }
 
     public void PrintMedias(List<Media> medias) {
@@ -52,32 +50,28 @@ public class View {
 
     public String PrintGetIdToReview() {
        logger.info("PrintGetIdToReview");
-        //System.out.println(this.internationalizer.getMessage("view.printGetIdToReview.ChooseIdText"));
-        System.out.println("Choose id to review");
+        System.out.println(this.internationalizer.getMessage("view.printGetIdToReview.ChooseIdText"));
         String chosenId = userInput.nextLine();
         return chosenId;
     }
 
     public String PrintDoReview() {
         logger.info("PrintDoReview");
-        //System.out.println(this.internationalizer.getMessage("view.printDoReview.WriteReview"));
-        System.out.println("Make your review");
+        System.out.println(this.internationalizer.getMessage("view.printDoReview.WriteReview"));
         String userReview = userInput.nextLine();
         return userReview;
     }
 
     public String PrintDoRating() {
         logger.info("PrintDoRating");
-        //System.out.println(this.internationalizer.getMessage("view.printDoRating.WriteRating"));
-        System.out.println("Choose a rating(1-3-5)");
+        System.out.println(this.internationalizer.getMessage("view.printDoRating.WriteRating"));
         String userReview = userInput.nextLine();
         return userReview;
     }
 
     public String PrintExitOrContinue() {
         logger.info("PrintExitOrContinue");
-        //System.out.println(this.internationalizer.getMessage("view.printExitOrContinue.chooseOption"));
-        System.out.println("Exit(0)/Another review(1)");
+        System.out.println(this.internationalizer.getMessage("view.printExitOrContinue.chooseOption"));
         String userReview = userInput.nextLine();
         return userReview;
     }
