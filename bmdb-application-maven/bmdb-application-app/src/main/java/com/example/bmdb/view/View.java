@@ -25,7 +25,7 @@ public class View {
     public User ReadUserData() {
         logger.info("ReadUserData");
         //System.out.println(this.internationalizer.getMessage("view.readUserData.WelcomeMessage"));
-        System.out.println("name");
+        System.out.println("What is your name?");
         String name = userInput.nextLine();
         return (User)currentUserBuilder.buildName(name).getObject();
     }
@@ -33,7 +33,7 @@ public class View {
     public void PrintWelcomeMessage() {
         logger.info("PrintWelcomeMessage");
         //System.out.println(this.internationalizer.getMessage("view.printWelcomeMessage.SecondWelcomeMessage"));
-        System.out.println("hello");
+        System.out.println("Welcome to the movie rating database");
     }
 
     public void PrintMedias(List<Media> medias) {
@@ -53,7 +53,7 @@ public class View {
     public String PrintGetIdToReview() {
        logger.info("PrintGetIdToReview");
         //System.out.println(this.internationalizer.getMessage("view.printGetIdToReview.ChooseIdText"));
-        System.out.println("choose id to review");
+        System.out.println("Choose id to review");
         String chosenId = userInput.nextLine();
         return chosenId;
     }
@@ -61,7 +61,7 @@ public class View {
     public String PrintDoReview() {
         logger.info("PrintDoReview");
         //System.out.println(this.internationalizer.getMessage("view.printDoReview.WriteReview"));
-        System.out.println("do review");
+        System.out.println("Make your review");
         String userReview = userInput.nextLine();
         return userReview;
     }
@@ -69,7 +69,7 @@ public class View {
     public String PrintDoRating() {
         logger.info("PrintDoRating");
         //System.out.println(this.internationalizer.getMessage("view.printDoRating.WriteRating"));
-        System.out.println("do rating");
+        System.out.println("Choose a rating(1-3-5)");
         String userReview = userInput.nextLine();
         return userReview;
     }
@@ -77,7 +77,7 @@ public class View {
     public String PrintExitOrContinue() {
         logger.info("PrintExitOrContinue");
         //System.out.println(this.internationalizer.getMessage("view.printExitOrContinue.chooseOption"));
-        System.out.println("exit/continue");
+        System.out.println("Exit(0)/Another review(1)");
         String userReview = userInput.nextLine();
         return userReview;
     }
