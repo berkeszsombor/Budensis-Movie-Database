@@ -1,23 +1,31 @@
 package com.example.bmdb.view;
 
-
-import java.util.List;
 import java.util.Scanner;
 
 import com.example.bmdb.Internationalizer;
 import com.example.bmdb.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+import javax.inject.Inject;
+
+@Component
 public class View {
     UserBuilder currentUserBuilder;
     Scanner userInput;
     private Internationalizer internationalizer;
     private static Logger logger = LoggerFactory.getLogger(View.class);
-
-    public View(Internationalizer internationalizer) {
-        currentUserBuilder=new UserBuilder();
+    @Inject
+    public void setCurrentUserBuilder(UserBuilder userBuilder){
+        this.currentUserBuilder = userBuilder;
+    }
+    @Inject
+    public void setInternationalizer(Internationalizer internationalizer){
         this.internationalizer = internationalizer;
+    }
+
+    public View() {
         logger.info("Constructor");
         userInput=new Scanner(System.in);
     }
@@ -26,7 +34,11 @@ public class View {
         logger.info("ReadUserData");
         System.out.println(this.internationalizer.getMessage("view.readUserData.WelcomeMessage"));
         String name = userInput.nextLine();
-        return (User)currentUserBuilder.buildName(name).getObject();
+        System.out.println(this.internationalizer.getMessage("view.readUserData.EmailMessage"));
+        String email = userInput.nextLine();
+        System.out.println(this.internationalizer.getMessage("view.readUserData.PasswordMessage"));
+        String password = userInput.nextLine();
+        return currentUserBuilder.build();
     }
 
     public void PrintWelcomeMessage() {
@@ -34,14 +46,14 @@ public class View {
         System.out.println(this.internationalizer.getMessage("view.printWelcomeMessage.SecondWelcomeMessage"));
     }
 
-    public void PrintMedias(List<Media> medias) {
+    public void PrintMedias(Iterable<Media> medias) {
         logger.info("PrintMedias");
         for(Media media : medias) {
             System.out.println(media.toString());
         }
     }
 
-    public void PrintReviews(List<Review> rev) {
+    public void PrintReviews(Iterable<Review> rev) {
         logger.info("PrintReviews");
         for(Review review : rev) {
             System.out.println(review.toString());

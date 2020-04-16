@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="182c3d76-6b79-443f-ac05-d1a404efd6cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmdb-application-app/src/main/resources/messages/view_hu.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bmdb-application-app/src/main/resources/messages/view_hu.properties" afterDir="false" />
-    </list>
+    <list default="true" id="182c3d76-6b79-443f-ac05-d1a404efd6cf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,11 +14,13 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1ZLgr2ovCm8d1HCpsc5gr7hphyl" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -31,14 +28,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive/Asztali gép/bmdb/bmdb-master" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="experimental" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -114,8 +110,14 @@
       <workItem from="1586326068892" duration="925000" />
       <workItem from="1586336537628" duration="15430000" />
       <workItem from="1586352659893" duration="361000" />
-      <workItem from="1586353379681" duration="466000" />
-      <workItem from="1586354943760" duration="185000" />
+      <workItem from="1586353379681" duration="1307000" />
+      <workItem from="1586354889208" duration="242000" />
+      <workItem from="1586776987755" duration="811000" />
+      <workItem from="1586865341385" duration="7876000" />
+      <workItem from="1586939683181" duration="13682000" />
+      <workItem from="1586964781304" duration="6979000" />
+      <workItem from="1587033438522" duration="113000" />
+      <workItem from="1587035050305" duration="5434000" />
     </task>
     <servers />
   </component>
@@ -136,15 +138,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586345808746" />
-    <state x="244" y="108" width="772" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586349183998">
+    <state x="244" y="108" width="772" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587033052578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="773" y="76" width="772" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584627041949" />
-    <state x="244" y="108" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586349183998" />
+    <state x="244" y="108" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587033052578" />
     <state x="204" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586264430465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="204" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586264430465" />
+    <state x="196" y="125" key="#com.intellij.ide.util.MemberChooser" timestamp="1586871453422">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="196" y="125" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586871453422" />
     <state x="519" y="237" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586349181013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -153,38 +159,43 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="653" y="225" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586351200830" />
-    <state x="234" y="214" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586264381773">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="131" y="275" width="519" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586871726982">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="131" y="275" width="519" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1586871726982" />
+    <state x="187" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586962667741">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="187" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1586962667741" />
     <state x="234" y="214" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586264381773" />
     <state x="92" y="92" width="776" height="856" key="DiffContextDialog" timestamp="1586349636656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="776" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586349636656" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586349006671">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587052111986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586349006671" />
-    <state width="1877" height="150" key="GridCell.Tab.0.bottom" timestamp="1586355128864">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587052111986" />
+    <state width="1877" height="827" key="GridCell.Tab.0.bottom" timestamp="1587053775580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585730883465" />
-    <state width="1877" height="150" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586355128864" />
-    <state width="1877" height="150" key="GridCell.Tab.0.center" timestamp="1586355128864">
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586965450074" />
+    <state width="1877" height="827" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587053775580" />
+    <state width="1877" height="827" key="GridCell.Tab.0.center" timestamp="1587053775580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585730883464" />
-    <state width="1877" height="150" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586355128864" />
-    <state width="1877" height="150" key="GridCell.Tab.0.left" timestamp="1586355128864">
+    <state width="1493" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586965450073" />
+    <state width="1877" height="827" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587053775580" />
+    <state width="1877" height="827" key="GridCell.Tab.0.left" timestamp="1587053775580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585730883464" />
-    <state width="1877" height="150" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586355128864" />
-    <state width="1877" height="150" key="GridCell.Tab.0.right" timestamp="1586355128864">
+    <state width="1493" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586965450073" />
+    <state width="1877" height="827" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587053775580" />
+    <state width="1877" height="827" key="GridCell.Tab.0.right" timestamp="1587053775580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585730883465" />
-    <state width="1877" height="150" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586355128864" />
+    <state width="1493" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586965450074" />
+    <state width="1877" height="827" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587053775580" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1586269402799">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -205,15 +216,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="162" y="165" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586259129523" />
-    <state x="303" y="89" key="SettingsEditor" timestamp="1586353769727">
+    <state x="303" y="89" key="SettingsEditor" timestamp="1587051346842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584627142604" />
-    <state x="303" y="89" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586353769727" />
+    <state x="303" y="89" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587051346842" />
     <state x="209" y="33" key="new project wizard" timestamp="1584627128906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584627128906" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1587027426431">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587027426431" />
     <state x="503" y="197" key="spring file set editor" timestamp="1586350872649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

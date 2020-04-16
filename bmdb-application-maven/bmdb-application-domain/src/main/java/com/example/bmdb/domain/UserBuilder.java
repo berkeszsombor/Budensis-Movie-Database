@@ -1,8 +1,11 @@
 package com.example.bmdb.domain;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserBuilder {
     private String name;
     private String email;
@@ -40,8 +43,11 @@ public class UserBuilder {
         return this;
     }
 
-    public Object getObject() {
-        User sam = new User(name, email, passWord);
+    public User build() {
+        User sam = new User();
+        sam.setName(name);
+        sam.setEmail(email);
+        sam.setPassword(passWord);
         sam.setUserReviews(userReviews);
         return sam;
     }

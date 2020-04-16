@@ -1,15 +1,17 @@
 package com.example.bmdb.domain;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MediaBuilder {
-    private BigDecimal id;
     private String title;
     private String description;
-    private LocalDate premier;
+    private Date premier;
     private List<Review> reviews;
     private List<Actor> cast;
     private Boolean IsMovie;
@@ -21,14 +23,8 @@ public class MediaBuilder {
     public void Initialise() {
         title="deafult";
         description="deafult";
-        premier=LocalDate.now();
         reviews=new ArrayList<Review>();
         cast=new ArrayList<Actor>();
-    }
-
-    public MediaBuilder buildId(BigDecimal id) {
-        this.id=id;
-        return this;
     }
 
     public MediaBuilder buildTitle(String title) {
@@ -41,7 +37,7 @@ public class MediaBuilder {
         return this;
     }
 
-    public MediaBuilder buildPremier(LocalDate premier) {
+    public MediaBuilder buildPremier(Date premier) {
         this.premier=premier;
         return this;
     }
@@ -66,17 +62,31 @@ public class MediaBuilder {
         return this;
     }
 
-    public Object getObject(List<Actor> cast) {
+    public MediaBuilder addActor(Actor act) {
+        this.cast.add(act);
+        return this;
+    }
+
+    public MediaBuilder addReview(Review review) {
+        this.reviews.add(review);
+        return this;
+    }
+
+    public Media build() {
         if(IsMovie) {
-            Movie sam = new Movie(id, title, description, premier);
+            Movie sam = new Movie();
             sam.setCast(cast);
-            sam.setReviews(new ArrayList<Review>());
+            sam.setReviews(reviews);
+            sam.setDescription(description);
+            sam.setPremier(premier);
             return sam;
         }
         else {
-            Series sam = new Series(id, description, description, premier);
-            sam.setCast(new ArrayList<Actor>());
-            sam.setReviews(new ArrayList<Review>());
+            Series sam = new Series();
+            sam.setCast(cast);
+            sam.setReviews(reviews);
+            sam.setDescription(description);
+            sam.setPremier(premier);
             return sam;
         }
     }

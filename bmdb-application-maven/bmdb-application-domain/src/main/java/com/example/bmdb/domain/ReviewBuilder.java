@@ -1,5 +1,8 @@
 package com.example.bmdb.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ReviewBuilder {
     private String text;
     private User user;
@@ -12,8 +15,8 @@ public class ReviewBuilder {
 
     public void Initialise() {
         text="deafult";
-        user=new User("name", "email", "password");
-        media=new Media(null, "deafult", "deafult", null);
+        user=new User();
+        media=new Media();
         rating=Rating.AVERAGE;
     }
 
@@ -37,8 +40,12 @@ public class ReviewBuilder {
         return this;
     }
 
-    public Object getObject() {
-        Review sam = new Review(text, user, media, rating);
+    public Review build() {
+        Review sam = new Review();
+        sam.setText(text);
+        sam.setCreator(user);
+        sam.setMedia(media);
+        sam.setRating(rating);
         this.media.addReviews(sam);
         return sam;
     }

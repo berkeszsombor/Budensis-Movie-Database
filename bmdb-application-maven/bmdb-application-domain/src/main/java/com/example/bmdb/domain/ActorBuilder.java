@@ -1,12 +1,15 @@
 package com.example.bmdb.domain;
 
-import java.time.LocalDate;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ActorBuilder {
     private String name;
-    private LocalDate born;
+    private Date born;
     private Sex sex;
     private String biography;
     private List<Media> filmography;
@@ -17,7 +20,6 @@ public class ActorBuilder {
 
     public void Initialise() {
         name="deafult";
-        born=LocalDate.now();
         sex=Sex.MALE;
         biography="default";
         filmography=new ArrayList<Media>();
@@ -28,7 +30,7 @@ public class ActorBuilder {
         return this;
     }
 
-    public ActorBuilder buildBorn(LocalDate born) {
+    public ActorBuilder buildBorn(Date born) {
         this.born=born;
         return this;
     }
@@ -48,8 +50,12 @@ public class ActorBuilder {
         return this;
     }
 
-    public Object getObject() {
-        Actor sam = new Actor(name, born, sex, biography);
+    public Actor build() {
+        Actor sam = new Actor();
+        sam.setName(name);
+        sam.setBorn(born);
+        sam.setBiography(biography);
+        sam.setSex(sex);
         sam.setFilmography(filmography);
         return sam;
     }
