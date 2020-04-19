@@ -11,21 +11,21 @@ public class Review {
 
     private String text;
 
-    @ManyToOne
+    @ManyToOne(/*, cascade = {CascadeType.ALL}*/)
     private User creator;
 
-    @ManyToOne
+    @ManyToOne(/*, cascade = {CascadeType.ALL}*/)
     private Media media;
 
     @Enumerated(EnumType.STRING)
     private Rating rating;
 
-    //public Review(String Text, User user, Media media, Rating rating) {
-    //    this.text = Text;
-    //    this.user = user;
-    //    this.media=media;
-    //    this.rating=rating;
-    //}
+    public Review(String Text, User user, Media media, Rating rating) {
+        this.text = Text;
+        this.creator = user;
+        this.media=media;
+        this.rating=rating;
+    }
 
     public Review(){
 
@@ -40,31 +40,24 @@ public class Review {
     public long getId() {
         return id;
     }
-    public void setId(long id) {
-        this.id = id;
-    }
-    public String getText() {
-        return text;
-    }
-    public void setText(String text) {
-        this.text = text;
-    }
     public Media getMedia() {
         return media;
     }
     public void setMedia(Media media) {
         this.media = media;
-    }
-    public User getUser() {
-        return creator;
+        this.media.addReviews(this);
     }
     public void setCreator(User user) {
         this.creator = user;
+        creator.addReview(this);
     }
     public Rating getRating() {
         return rating;
     }
     public void setRating(Rating rating) {
         this.rating = rating;
+    }
+    public void setText(String text){
+        this.text = text;
     }
 }

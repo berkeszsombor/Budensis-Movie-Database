@@ -13,14 +13,7 @@ public class UserBuilder {
     private List<Review> userReviews;
 
     public UserBuilder(){
-        Initialise();
-    }
-
-    public void Initialise() {
-        name="deafult";
-        email="default";
-        passWord="default";
-        userReviews=new ArrayList<Review>();
+        this.userReviews = new ArrayList<>();
     }
 
     public UserBuilder buildName(String name) {
@@ -44,11 +37,7 @@ public class UserBuilder {
     }
 
     public User build() {
-        User sam = new User();
-        sam.setName(name);
-        sam.setEmail(email);
-        sam.setPassword(passWord);
-        sam.setUserReviews(userReviews);
+        User sam = new User(this.name, this.email, this.passWord);
         return sam;
     }
 }

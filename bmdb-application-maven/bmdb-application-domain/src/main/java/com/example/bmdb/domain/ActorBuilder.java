@@ -15,14 +15,7 @@ public class ActorBuilder {
     private List<Media> filmography;
 
     public ActorBuilder(){
-        Initialise();
-    }
-
-    public void Initialise() {
-        name="deafult";
-        sex=Sex.MALE;
-        biography="default";
-        filmography=new ArrayList<Media>();
+        this.filmography = new ArrayList<>();
     }
 
     public ActorBuilder buildName(String name) {
@@ -45,18 +38,8 @@ public class ActorBuilder {
         return this;
     }
 
-    public ActorBuilder buildList(List<Media> filmography) {
-        this.filmography=filmography;
-        return this;
-    }
-
     public Actor build() {
-        Actor sam = new Actor();
-        sam.setName(name);
-        sam.setBorn(born);
-        sam.setBiography(biography);
-        sam.setSex(sex);
-        sam.setFilmography(filmography);
+        Actor sam = new Actor(this.name, this.born, this.sex, this.biography);
         return sam;
     }
 }

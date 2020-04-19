@@ -10,14 +10,6 @@ public class ReviewBuilder {
     private Rating rating;
 
     public ReviewBuilder(){
-        Initialise();
-    }
-
-    public void Initialise() {
-        text="deafult";
-        user=new User();
-        media=new Media();
-        rating=Rating.AVERAGE;
     }
 
     public ReviewBuilder buildText(String text) {
@@ -41,12 +33,7 @@ public class ReviewBuilder {
     }
 
     public Review build() {
-        Review sam = new Review();
-        sam.setText(text);
-        sam.setCreator(user);
-        sam.setMedia(media);
-        sam.setRating(rating);
-        this.media.addReviews(sam);
+        Review sam = new Review(text, user, media, rating);
         return sam;
     }
 }

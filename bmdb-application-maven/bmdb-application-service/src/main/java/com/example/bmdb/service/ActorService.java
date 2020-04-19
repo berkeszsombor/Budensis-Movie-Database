@@ -2,34 +2,22 @@ package com.example.bmdb.service;
 
 import com.example.bmdb.domain.Actor;
 import com.example.bmdb.repository.ActorRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Service
 public class ActorService {
+    @Autowired
     private ActorRepo repo;
 
-    @Inject
-    public void setRepo(ActorRepo repo){
-        this.repo = repo;
+    public List<Actor> findAllActor() {
+        return (List<Actor>) this.repo.findAll();
     }
 
-    public void saveOne(Actor actorToSave){
-        this.repo.save((actorToSave));
-    }
-
-    public void saveAll(Iterable<Actor> actorsToSave){
-        if (actorsToSave != null){
-            repo.saveAll(actorsToSave);
-        }
-    }
-
-    public Actor findActorById(String id){
-        return repo.findActorById(id).get();
-    }
-
-    public Iterable<Actor> findAllActors(){
-        return repo.findAll();
+    public void saveActor(Actor actor) {
+        this.repo.save(actor);
     }
 }

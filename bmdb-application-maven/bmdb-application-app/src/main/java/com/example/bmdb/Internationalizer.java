@@ -1,14 +1,12 @@
 package com.example.bmdb;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
-import org.springframework.stereotype.Component;
-import javax.inject.Inject;
 import java.util.Locale;
 
-@Component
 public class Internationalizer {
-    @Inject
+    @Autowired
     private MessageSource messageSource;
 
     @Value("en")

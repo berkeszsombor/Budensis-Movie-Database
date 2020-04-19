@@ -17,15 +17,10 @@ public class MediaBuilder {
     private Boolean IsMovie;
 
     public MediaBuilder(){
-        Initialise();
+        this.reviews = new ArrayList<>();
+        this.cast = new ArrayList<>();
     }
 
-    public void Initialise() {
-        title="deafult";
-        description="deafult";
-        reviews=new ArrayList<Review>();
-        cast=new ArrayList<Actor>();
-    }
 
     public MediaBuilder buildTitle(String title) {
         this.title=title;
@@ -39,11 +34,6 @@ public class MediaBuilder {
 
     public MediaBuilder buildPremier(Date premier) {
         this.premier=premier;
-        return this;
-    }
-
-    public MediaBuilder buildReviewList(List<Review> reviews) {
-        this.reviews=reviews;
         return this;
     }
 
@@ -74,19 +64,23 @@ public class MediaBuilder {
 
     public Media build() {
         if(IsMovie) {
-            Movie sam = new Movie();
-            sam.setCast(cast);
-            sam.setReviews(reviews);
-            sam.setDescription(description);
-            sam.setPremier(premier);
+            Movie sam = new Movie(this.title, this.description, this.premier);
+            for (Review rev : this.reviews){
+                sam.addReviews(rev);
+            }
+            for (Actor act : this.cast){
+                sam.addCast(act);
+            }
             return sam;
         }
         else {
-            Series sam = new Series();
-            sam.setCast(cast);
-            sam.setReviews(reviews);
-            sam.setDescription(description);
-            sam.setPremier(premier);
+            Series sam = new Series(this.title, this.description, this.premier);
+            for (Review rev : this.reviews){
+                sam.addReviews(rev);
+            }
+            for (Actor act : this.cast){
+                sam.addCast(act);
+            }
             return sam;
         }
     }

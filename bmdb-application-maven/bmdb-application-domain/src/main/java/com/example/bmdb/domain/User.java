@@ -4,6 +4,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,23 +19,21 @@ public class User {
 
     private String passWord;
 
-    @OneToMany(mappedBy = "creator", fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "creator", fetch = FetchType.EAGER/*, cascade = {CascadeType.ALL}*/)
     @Fetch(FetchMode.SUBSELECT)
     private List<Review> userReviews;
 
-    //public User(String Name, String Email, String PassWord) {
-    //    this.name = Name;
-    //   this.email = Email;
-    //   this.setPassword(PassWord);
-    //   setUserReviews(new ArrayList<Review>());
-    //}
+    public User(String Name, String Email, String PassWord) {
+        this.name = Name;
+       this.email = Email;
+       this.passWord = PassWord;
+       this.userReviews = new ArrayList<Review>();
+    }
 
     public User(){
-
     }
 
     public long getId(){return this.id;}
-    public void setId(long id){this.id = id;}
     public String getName(){return this.name;}
     public void setName(String name){this.name = name;}
     public String getEmail(){return this.email;}
@@ -50,8 +49,5 @@ public class User {
     }
     public List<Review> getReview(){
         return this.userReviews;
-    }
-    public void setUserReviews(List<Review> list) {
-        this.userReviews=list;
     }
 }
