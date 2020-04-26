@@ -19,8 +19,8 @@ public class User {
 
     private String passWord;
 
-    @OneToMany(mappedBy = "creator", fetch = FetchType.EAGER/*, cascade = {CascadeType.ALL}*/)
-    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "creator"/*, fetch = FetchType.EAGER*//*, cascade = {CascadeType.ALL}*/)
+    //@Fetch(FetchMode.SUBSELECT)
     private List<Review> userReviews;
 
     public User(String Name, String Email, String PassWord) {

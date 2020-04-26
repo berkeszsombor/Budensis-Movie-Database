@@ -16,6 +16,8 @@ import javax.inject.Inject;
 public class View {
     Scanner userInput;
     @Autowired
+
+
     private Internationalizer internationalizer;
     private static Logger logger = LoggerFactory.getLogger(View.class);
 
@@ -28,12 +30,12 @@ public class View {
     public User ReadUserData() {
         logger.info("ReadUserData");
         System.out.println(this.internationalizer.getMessage("view.readUserData.WelcomeMessage"));
-        String name = userInput.nextLine();
+        String currentName = userInput.nextLine();
         System.out.println(this.internationalizer.getMessage("view.readUserData.EmailMessage"));
-        String email = userInput.nextLine();
+        String currentEmail = userInput.nextLine();
         System.out.println(this.internationalizer.getMessage("view.readUserData.PasswordMessage"));
-        String password = userInput.nextLine();
-        return new User(name, email, password);
+        String currentPassword= userInput.nextLine();
+        return new User(currentName, currentEmail, currentPassword);
     }
 
     public void PrintWelcomeMessage() {

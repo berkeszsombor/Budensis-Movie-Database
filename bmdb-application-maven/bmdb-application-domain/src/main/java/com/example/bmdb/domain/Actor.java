@@ -22,11 +22,10 @@ public class Actor {
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
-    @Column(length = 999)
+    @Column(length = 800)
     private String biography;
 
-    @ManyToMany(mappedBy = "cast",fetch = FetchType.EAGER/*, cascade = {CascadeType.ALL}*/)
-    @Fetch(FetchMode.SUBSELECT)
+    @ManyToMany(mappedBy = "cast")
     private List<Media> filmography;
 
     public Actor(String Name, Date Born, Sex sex, String Biography) {
@@ -38,7 +37,6 @@ public class Actor {
     }
 
     public Actor(){
-
     }
 
     @Override

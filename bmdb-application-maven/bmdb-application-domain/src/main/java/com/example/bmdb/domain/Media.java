@@ -23,11 +23,11 @@ public class Media {
     @Temporal(TemporalType.DATE)
     private Date premier;
 
-    @OneToMany(mappedBy = "media" ,fetch = FetchType.EAGER/*, cascade = {CascadeType.ALL}*/)
+    @OneToMany(mappedBy = "media" ,fetch = FetchType.EAGER)
     @Fetch(FetchMode.SUBSELECT)
     private List<Review> reviews;
 
-    @ManyToMany(fetch = FetchType.EAGER/*, cascade = {CascadeType.ALL}*/)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable
     @Fetch(FetchMode.SUBSELECT)
     private List<Actor> cast;

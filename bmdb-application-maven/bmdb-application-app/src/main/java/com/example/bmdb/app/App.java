@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class App {
     private static Logger logger = LoggerFactory.getLogger(App.class);
@@ -36,6 +37,7 @@ public class App {
 
     public App() {
         this.medias = new ArrayList<>();
+        this.review = new Review();
     }
 
     public void launch() {
@@ -44,8 +46,8 @@ public class App {
         this.medias.addAll(this.mediaService.findAllMedia());
 
         this.view.PrintWelcomeMessage();
-        User newUser = this.view.ReadUserData();
-        this.userService.saveUser(newUser);
+        this.currentUser = this.view.ReadUserData();
+        this.userService.saveUser(currentUser);
         logger.info("user created");
 
         while(this.stillRunning == true){
@@ -55,9 +57,10 @@ public class App {
             this.review.setText(this.view.PrintDoReview());
             int chosenRating = Integer.parseInt(view.PrintDoRating());
             this.review.setRating(Rating.intToRating(chosenRating));
+            this.review.setCreator(this.currentUser);
             this.reviewService.saveReview(this.review);
             this.view.PrintReviews(this.reviewService.findAllReview(this.selectedMedia));
-            ExitOrContinue();
+            this.ExitOrContinue();
         }
     }
 

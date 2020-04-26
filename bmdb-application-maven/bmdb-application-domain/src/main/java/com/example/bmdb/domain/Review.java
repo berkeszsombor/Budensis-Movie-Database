@@ -11,10 +11,10 @@ public class Review {
 
     private String text;
 
-    @ManyToOne(/*, cascade = {CascadeType.ALL}*/)
+    @ManyToOne()
     private User creator;
 
-    @ManyToOne(/*, cascade = {CascadeType.ALL}*/)
+    @ManyToOne()
     private Media media;
 
     @Enumerated(EnumType.STRING)
@@ -28,7 +28,6 @@ public class Review {
     }
 
     public Review(){
-
     }
 
     @Override
