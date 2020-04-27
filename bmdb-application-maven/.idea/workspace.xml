@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OneDrive/Egyetem/6. Félév/Nagyvállatai szoftverfejlesztés Java alapon/bmdb/bmdb-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -121,6 +121,7 @@
       <workItem from="1587295874881" duration="3076000" />
       <workItem from="1587299352236" duration="10500000" />
       <workItem from="1587887728800" duration="2742000" />
+      <workItem from="1587986002844" duration="913000" />
     </task>
     <servers />
   </component>
